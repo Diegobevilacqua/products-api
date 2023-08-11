@@ -1,5 +1,6 @@
 package tutorials.products_service.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(Constants.API_BASE_PATH + Constants.CATEGORIES_ENDPOINT_URL)
+@SecurityRequirement(name = "Bearer Authentication")
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;

@@ -1,17 +1,18 @@
 package tutorials.products_service.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tutorials.products_service.constants.Constants;
 import tutorials.products_service.dto.ProductDTO;
-import tutorials.products_service.entity.Category;
 import tutorials.products_service.service.ProductService;
 
 import java.util.List;
 
 @RestController
 @RequestMapping(Constants.API_BASE_PATH + Constants.PRODUCTS_ENDPOINT_URL)
+@SecurityRequirement(name = "Bearer Authentication")
 public class ProductController {
     @Autowired
     private ProductService productService;
